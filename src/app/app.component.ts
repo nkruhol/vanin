@@ -13,9 +13,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get("/hello").pipe().subscribe(i => console.log(i));
+    this.http.get("/.netlify/functions/hello").pipe().subscribe(i => console.log(i));
 
-    this.http.get("/participants").pipe().subscribe(i => console.log(i));
+    this.http.get("/.netlify/functions/participants").pipe().subscribe(i => console.log(i));
 
   }
 }
