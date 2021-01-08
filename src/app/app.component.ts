@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
     // this.http.get("http://localhost:8888/.netlify/functions/participants").pipe().subscribe(i => console.log(i));
 
-    this.http.get("/.netlify/functions/files").pipe().subscribe(i => console.log(i));
+    // this.http.get("/.netlify/functions/files").pipe().subscribe(i => console.log(i));
 
   }
 }
