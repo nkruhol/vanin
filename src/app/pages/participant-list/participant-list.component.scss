@@ -1,0 +1,10 @@
+.participants-container {
+  margin-top: 50px;
+
+  table {
+    tr:hover {
+      background-color: lightgray;
+      cursor: pointer;
+    }
+  }
+}
