@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpRequest, HttpResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,9 @@ export class AppComponent implements OnInit {
 
     // this.http.get("/.netlify/functions/participants").pipe().subscribe(i => console.log(i));
 
-    this.http.get("http://localhost:8888/.netlify/functions/participants").pipe().subscribe(i => console.log(i));
+    // this.http.get("http://localhost:8888/.netlify/functions/participants").pipe().subscribe(i => console.log(i));
+
+    this.http.get("/.netlify/functions/files").pipe().subscribe(i => console.log(i));
 
   }
 }
