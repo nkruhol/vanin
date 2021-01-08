@@ -23,6 +23,21 @@
           <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li> -->
+          <li class="nav-item dropdown nav-item--language"
+            ngbDropdown>
+            <a class="nav-link dropdown-toggle"
+              ngbDropdownToggle>
+              {{ language$ | async }}
+            </a>
+            <ul class="dropdown-menu" ngbDropdownMenu>
+              <li ngbDropdownItem
+                (click)="changeLanguage(LanguageEnum.UA)"><a class="dropdown-item">UA</a></li>
+              <li ngbDropdownItem
+                (click)="changeLanguage(LanguageEnum.RU)"><a class="dropdown-item">RU</a></li>
+              <li ngbDropdownItem
+                (click)="changeLanguage(LanguageEnum.EN)"><a class="dropdown-item">EN</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>

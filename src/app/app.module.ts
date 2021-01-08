@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from './pages/home/home.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
@@ -16,6 +16,7 @@ import { EffectsConfiguration } from "./storage/effects-configuration";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { StoreRouterConnectingModule } from "@ngrx/router-store";
 import { CustomRouterSerializer } from "./storage/router/router.reducers";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CustomRouterSerializer } from "./storage/router/router.reducers";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
     StoreModule.forRoot(ReducerMap, ReducerConfiguration),
@@ -39,6 +41,8 @@ import { CustomRouterSerializer } from "./storage/router/router.reducers";
     StoreRouterConnectingModule.forRoot({
         serializer: CustomRouterSerializer,
     }),
+
+    NgbDropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
