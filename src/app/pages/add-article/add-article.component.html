@@ -1,0 +1,60 @@
+<div class="check-container row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h3>Загрузка статьи</h3>
+    <p>
+      Для загрузки статьи необходимо выполнить следующие шаги:
+    </p>
+    <ul>
+      <li>Введите свой email адрес, и нажмите кнопку проверить.</li>
+      <li>Из списка статей, которые прикреплены к вашему email-адресу, выберете текущую</li>
+      <li>Загрузите статью</li>
+    </ul>
+    <form [formGroup]="checkForm"
+      novalidate
+      (submit)="checkEmail()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email"
+          class="form-control"
+          id="email"
+          formControlName="email">
+      </div>
+      <button type="submit"
+        [disabled]="checkForm.invalid"
+        class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <div class="col-2"></div>
+</div>
+
+<div class="row"
+  *ngIf="isLoading">
+  <div class="col-6"></div>
+  <div class="col-6">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden"></span>
+    </div>
+  </div>
+</div>
+
+<div class="row document-container"
+  *ngIf="articleList">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <form [formGroup]="documentForm">
+      <div class="mb-3">
+        <label for="inputState" class="form-label">Select Article</label>
+        <select id="inputState" class="form-select">
+          <option *ngFor="let a of articleList" value="a.id">{{a.articleName}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="file" class="form-label">Choose File</label>
+        <input type="file"
+          (change)="fileChanged($event)"/>
+      </div>
+    </form>
+  </div>
+  <div class="col-2"></div>
+</div>

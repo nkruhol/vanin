@@ -13,9 +13,10 @@ export class RegistrationComponent {
   ) { }
 
   registrationForm = this.fb.group({
-    firstName: ["", Validators.required],
+    firstName: [null, [Validators.required]],
     lastName: [null, [Validators.required]],
     email: [null, [Validators.required, Validators.email]],
+    phone: [null, [Validators.pattern("\\d{0,12}")]],
     articleName: [null, [Validators.required]],
     organization: [null, [Validators.required]],
     coAuthors: [null, [Validators.required]],

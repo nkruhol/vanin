@@ -18,6 +18,7 @@ import { StoreRouterConnectingModule } from "@ngrx/router-store";
 import { CustomRouterSerializer } from "./storage/router/router.reducers";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ParticipantListComponent } from './pages/participant-list/participant-list.component';
+import { AddArticleComponent } from './pages/add-article/add-article.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ParticipantListComponent } from './pages/participant-list/participant-l
     RegistrationComponent,
     HeaderComponent,
     LayoutComponent,
-    ParticipantListComponent
+    ParticipantListComponent,
+    AddArticleComponent
   ],
   imports: [
     BrowserModule,
