@@ -66,8 +66,15 @@
         </textarea>
       </div>
 
+      <div class="md-3">
+        <re-captcha
+          (resolved)="resolved($event)"
+          siteKey="6LfRuyYaAAAAAC-Fh8cFC_BuWb8iwyeh9Ewea7YN">
+        </re-captcha>
+      </div>
+
       <button type="submit"
-        [disabled]="registrationForm.invalid"
+        [disabled]="registrationForm.invalid && !notRobot"
         class="btn btn-primary">Submit</button>
     </form>
   </div>

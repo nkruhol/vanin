@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RecaptchaModule } from 'ng-recaptcha';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -36,6 +36,7 @@ import { AddArticleComponent } from './pages/add-article/add-article.component';
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
+    RecaptchaModule,
     StoreModule.forRoot(ReducerMap, ReducerConfiguration),
     EffectsModule.forRoot(EffectsConfiguration),
     StoreDevtoolsModule.instrument({

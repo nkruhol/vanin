@@ -12,6 +12,8 @@ export class RegistrationComponent {
     private fb: FormBuilder,
   ) { }
 
+  notRobot: boolean;
+
   registrationForm = this.fb.group({
     firstName: [null, [Validators.required]],
     lastName: [null, [Validators.required]],
@@ -26,5 +28,11 @@ export class RegistrationComponent {
   registration() {
 
     console.log(this.registrationForm.value)
+  }
+
+  resolved(e) {
+
+    console.log(e);
+    this.notRobot = true;
   }
 }
