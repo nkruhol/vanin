@@ -2,7 +2,7 @@
   *ngFor="let toast of toasts | async"
   [class]="getToastClass(toast)"
   [autohide]="true"
-  [delay]="toast.delay || 500000000"
+  [delay]="toast.delay || 5000"
   (hide)="closeToast(toast)">
   {{ toast.text }}
   <a (click)="closeToast(toast)">

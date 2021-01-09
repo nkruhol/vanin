@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
 import { Store } from "@ngrx/store";
 import { CreateParticipantAction } from "src/app/storage/registration/registration.actions";
@@ -37,20 +37,7 @@ export class RegistrationComponent {
 
   registration() {
 
-    console.log(this.registrationForm.value)
-
-    const form ={
-      articleName: "Повышение энергоэффективности в системах собственных нужд тепловых электрических станций",
-      coAuthors: "Ванин В.А., Лазуренко А.П., Кругол Н.М.",
-      description: "повышение энергоэффективности в системах собственных нужд тепловых электрических станций",
-      email: "kruhgol@gmail.com",
-      firstName: "Николай",
-      lastName: "Кругол",
-      organization: "НТУ ХПИ",
-      phone: "0955220835",
-    };
-
-    this.store.dispatch(CreateParticipantAction({ form }));
+    this.store.dispatch(CreateParticipantAction({ form: this.registrationForm.value }));
   }
 
   resolved(e) {
