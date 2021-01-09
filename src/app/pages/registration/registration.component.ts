@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
 import { Store } from "@ngrx/store";
-import { CreateParticipantAction } from "src/app/storage/particaipants/participants.actions";
+import { CreateParticipantAction } from "src/app/storage/registration/registration.actions";
+import { selectState } from "src/app/storage/registration/registration.selectors";
+import { State } from "src/app/storage/registration/registration.state";
 import { IStore } from "src/app/storage/store";
 
 @Component({
@@ -11,12 +13,16 @@ import { IStore } from "src/app/storage/store";
 })
 export class RegistrationComponent {
 
+  state$ = this.store.select(selectState);
+
   constructor(
     private fb: FormBuilder,
     private store: Store<IStore>,
   ) { }
 
-  notRobot: boolean = true;
+  State = State;
+
+  notRobot: boolean;
 
   registrationForm = this.fb.group({
     firstName: [null, [Validators.required]],

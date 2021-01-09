@@ -5,7 +5,7 @@ import { Store } from "@ngrx/store";
 import { concat, of } from "rxjs";
 import { map, switchMap } from "rxjs/operators";
 import { IStore } from "../store";
-import { CreateParticipantAction, ExtendStateAction, InitParticipantsListAction } from "./participants.actions";
+import { ExtendStateAction, InitParticipantsListAction } from "./participants.actions";
 import { IParticipant, State } from "./participants.state";
 
 export interface IFaunaDbEntity<T> {
@@ -47,14 +47,4 @@ export class ParticipantsEffect {
     }),
     map(newState => ExtendStateAction({ newState })),
   ));
-
-  create$ = createEffect(() => this.actions$.pipe(
-
-    ofType(CreateParticipantAction),
-    switchMap(({ form }) => {
-
-      return this.http.post(".netlify/functions/create-participant", form);
-    }),
-    map(newState => ExtendStateAction({ newState })),
-  ))
 }

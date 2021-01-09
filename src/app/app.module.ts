@@ -19,6 +19,9 @@ import { CustomRouterSerializer } from "./storage/router/router.reducers";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ParticipantListComponent } from './pages/participant-list/participant-list.component';
 import { AddArticleComponent } from './pages/add-article/add-article.component';
+import { ToastsContainerComponent } from "./shared/toasts/toasts-container.component";
+import { HistoryComponent } from './pages/history/history.component';
+import { ContactsComponent } from './pages/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { AddArticleComponent } from './pages/add-article/add-article.component';
     HeaderComponent,
     LayoutComponent,
     ParticipantListComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    ToastsContainerComponent,
+    HistoryComponent,
+    ContactsComponent,
   ],
   imports: [
     BrowserModule,

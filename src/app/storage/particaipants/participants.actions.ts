@@ -9,9 +9,3 @@ export const ExtendStateAction = createAction(
 export const InitParticipantsListAction = createAction(
   "[Participants] Init Participants List",
 );
-
-export const CreateParticipantAction = createAction(
-  "[Participants] Create participant",
-  props<{ form: IParticipant }>(),
-);
-

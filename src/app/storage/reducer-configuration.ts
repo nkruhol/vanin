@@ -2,12 +2,14 @@ import { routerReducer } from "@ngrx/router-store";
 import { Action, ActionReducer, RootStoreConfig } from "@ngrx/store";
 import { ApplicationReducer } from "./app/app.reducer";
 import { ParticipantsReducer } from "./particaipants/participants.reducer";
+import { RegistrationReducer } from "./registration/registration.reducer";
 import { IStore } from "./store";
 
 export const ReducerMap: { [key in keyof IStore]: (state: any, action: any) => any } = {
   router: routerReducer,
   app: ApplicationReducer,
   participants: ParticipantsReducer,
+  registration: RegistrationReducer,
 }
 
 export const ReducerConfiguration: RootStoreConfig<IStore> = {
