@@ -1,12 +1,12 @@
 import faunadb from 'faunadb'
 const q = faunadb.query
 
-export class ProductService {
+export class ParticipantsService {
   constructor(data) {
     this.client = data.client
   }
 
-  async getProducts() {
+  async getParticipants() {
     return new Promise((resolve, reject) => {
       this.client
         .query(q.Paginate(q.Match(q.Ref('indexes/participants'))))
@@ -23,6 +23,26 @@ export class ProductService {
 
           reject(error)
         })
+    })
+  }
+
+  async createParticipant(data) {
+    return new Promise((resolve, reject) => {
+
+      const createP = this.client.query(
+        q.Create(q.Collection('participants'), { data: JSON.parse(data) }),
+      );
+
+      createP
+      .then(function(response) {
+
+        resolve(response);
+      })
+      .catch((error) => {
+        console.log('error', error)
+
+        reject(error)
+      })
     })
   }
 }
